@@ -2,3 +2,4 @@ sldk a
 d as
 d 
 ovdje je novi red
+mjenjam nakon commit
