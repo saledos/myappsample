@@ -102,4 +102,11 @@ sve izmjene koje radimo u lokalnom direktoriju moramo prebaciti sa
 
 $ git push
 
+Spajanje sa serverom u local prazan folder
+$ git remote add origin 'link koji se nalazi u github'
+
+povaæenje podataka
+$git pull origin master
+
+
 
