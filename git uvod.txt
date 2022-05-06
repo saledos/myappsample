@@ -1,0 +1,105 @@
+Osnovne komande
+
+$ git init   		//inicijalizira lokalni Git repository
+$ git add <file>  	//Dodaje file(ove) na Index
+$ git status 		//Provjerava status rada
+$ git commit		//Potvrðuje izmjene na Index-u
+
+$ git push		// prebacuje sa lokalnog na Remote repository
+$ git pull		// povlaæi zadnje sa Remote repository
+$ git clone		// Klonira (download) repository na novi (lokalni) direktorij
+
+
+Desnim klikom na folder u kojem radimo odaberemo Get Bash Here
+Otvara se control
+
+Fileove kreiramo sa "touch" npr:
+
+$ touch pismo.txt
+
+
+inicijaliziranje fildera u git repository:
+$ git init
+
+Da bi se vidio u folderu git u postavkama mora biti vidljivo hidden files
+Kofiguracija gita sa:
+$ git config --global user.name 'Ivan Horvat'
+$ git config --global user.mail 'ivan.horvat@gmail.com'
+
+Dodavanje pismo.txt u repository:
+$ git add pismo.txt
+
+Micanje pismo.txt iz repositorija
+$ git rm --cached pismo.txt
+
+Dodavanje svih fileova iz foldera u git repository:
+$ git add .
+
+$ git status    // pokazuje status filova i koji trebaju biti potvrðeni
+
+Potvrðujemo sa 
+$ git commit
+
+Otvara se prozor u kojem se treba potvrditi.
+Potrebno upisati:
+
+Initial commit
+-stisnuti ESC i u zadnjem redu upisati
+:wq  // i ENTER
+
+Da bi preskoèili sve ovo sa potvrdom možemo koristiti naredbu:
+$ git commit -m 'Upiši komentar'
+
+Filove koje ne želimo prebacivati upisujemo u .gitignore
+Prvo ga treba napraviti u folderu sa:
+
+$ touch .gitignore
+Nakon što upišem u git ignore sta da ignorira (npr "log.txt" ili neki folder "/dir2") prebacujem ga sa
+
+$ git add .
+
+Sve potvrdim sa 
+$ git commit -m 'Ignore file'
+
+Novi Branch (petlja) dodaje se sa
+$ git branch login    / login je novi branch
+
+potvrditi sa commit
+$ git commit -m 'novi branch'
+
+i dalje smo u master branch dok ne prijeðemo sa:
+$ git checkout login
+
+File radimo
+$ touch login.html 	//NAPRAVIO SAM LOGIN.HTML file u branch login
+
+pojavljuje se u folderu radnom
+dodajemo ga:
+$ git add .
+i potvrðujemo:
+$ git commit -m 'login ili nesto'
+
+Ako se vratimo na master
+$ git checkout master
+
+login.html nestaje jer se on nalazi u login brange
+Spajamo izmjene u login i master tako da unesemo
+
+$ git merge login
+pojavljuje se forma za potvrdu u koju je upicuje komentar i sa ESC upisuje 
+:wq
+
+Spajanje na remote:
+$ git remote
+Ako pokaže "origin"
+tada sa nardbom prebacujemo filove iz local u remote:
+
+$ git push -u origin master   //može se kopirati sa stranice Github i pastati
+
+U github bi sad trebali biti vidljivi svi fajlovi
+
+sve izmjene koje radimo u lokalnom direktoriju moramo prebaciti sa 
+
+$ git push
+
+
